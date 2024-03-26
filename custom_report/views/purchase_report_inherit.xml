@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="purchase_order_custom_report" inherit_id="purchase.report_purchaseorder_document">
+    <!-- Adjust the header to include new columns for 'CK alista', 'CK carga', and 'Bultos No Cargados' -->
+    <xpath expr="//table[contains(@class, 'o_main_table')]/thead/tr/th[@name='th_description']" position="before">
+      <th class="text-center">Barcode</th>
+    </xpath>
+    <xpath expr="//table[contains(@class, 'o_main_table')]/thead/tr/th[@name='th_amount']" position="after">
+      <th class="text-center">CK alista</th>
+      <th class="text-center">CK carga</th>
+      <th class="text-center">Bultos No Cargados</th>
+    </xpath>
+    <xpath expr="//table[contains(@class, 'o_main_table')]/tbody" position="replace">
+    <t t-foreach="o.order_line" t-as="line">
+        <tr>
+            <!-- Product barcode -->
+            <td><span t-field="line.product_id.barcode"/></td>
+            <!-- Product Description -->
+            <td><span t-field="line.name"/></td>
+            <!-- Taxes -->
+            <td><span t-esc="', '.join(map(lambda x: x.name, line.taxes_id))"/></td>
+            <!-- Date Req. -->
+            <td class="text-center"><span t-field="line.date_planned"/></td>
+            <!-- Qty -->
+            <td class="text-right"><span t-field="line.product_qty"/></td>
+            <!-- Unit Price -->
+            <td class="text-right"><span t-field="line.price_unit"/></td>
+            <!-- Amount -->
+            <td class="text-right"><span t-field="line.price_subtotal"/></td>
+            <!-- CK alista -->
+            <td class="text-center">
+                <input type="checkbox" t-att-checked="'true' if line.custom_field2 else None" name="ck_alista"/>
+            </td>
+            <!-- CK carga -->
+            <td class="text-center">
+                <input type="checkbox" t-att-checked="'true' if line.custom_field3 else None" name="ck_carga"/>
+            </td>
+            <!-- Bultos No Cargados -->
+            <td class="text-center">
+                <span t-field="line.bultos_no_cargados"/> <!-- Replace with the correct field name -->
+            </td>
+        </tr>
+    </t>
+</xpath>
+
+</template>
+
+  
+  <template id="purchase_report_inherit" inherit_id="purchase.report_purchaseorder_document">
+    <!-- Insert signature fields with labels and lines after the total -->
+    <xpath expr="//div[@id='total']" position="after">
+      <table class="table table-borderless">
+        <tbody><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <tr style="border: 0px solid black; ">
+            <td class="text-center">
+              <div style="border-bottom: 1px solid black; width: 70%; margin: auto; padding-top: 2em;"></div>
+              <span t-field="o.enlisted_signature" t-if="o.enlisted_signature"/>
+              <div style="text-align: center;"><strong>Enlisted Signature</strong></div>
+            </td>
+            <td class="text-center">
+              <div style="border-bottom: 1px solid black; width: 70%; margin: auto; padding-top: 2em;"></div>
+              <span t-field="o.delivery_signature" t-if="o.delivery_signature"/>
+              <div style="text-align: center;"><strong>Delivery Signature</strong></div>
+            </td>
+            <td class="text-center">
+              <div style="border-bottom: 1px solid black; width: 70%; margin: auto; padding-top: 2em;"></div>
+              <span t-field="o.received_signature" t-if="o.received_signature"/>
+              <div style="text-align: center;"><strong>Received Signature</strong></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </xpath>
+  </template>
+
+
+
+
+
+<template id="sale_order_custom_report" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//table[contains(@class, 'o_main_table')]/thead/tr/th[@name='th_description']" position="before">
+      <th class="text-center">Barcode</th>
+    </xpath>
+        <!-- Adjust the header to include new columns for 'CK alista', 'CK carga', and 'Bultos No Cargados' -->
+    <xpath expr="//table[contains(@class, 'o_main_table')]/thead/tr" position="inside">
+            <th class="text-center">CK alista</th>
+            <th class="text-center">CK carga</th>
+            <th class="text-center">Bultos No Cargados</th>
+        </xpath>
+        <!-- Replace the existing tbody with the new structure including checkboxes -->
+        <xpath expr="//table[contains(@class, 'o_main_table')]/tbody" position="replace">
+    <t t-foreach="doc.order_line" t-as="line">
+        <tr>
+            <!-- Product barcode -->
+            <td><span t-field="line.product_id.barcode"/></td>
+            <!-- Product Description -->
+            <td><span t-field="line.name"/></td>
+            <!-- Taxes -->
+            <td class="text-center"><span t-field="line.product_uom_qty"/></td>
+            <td class="text-center"><span t-field="line.price_unit"/></td>
+            <td class="text-center"><span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/></td>
+            <td class="text-center"><span t-field="line.price_subtotal"/></td>
+            <!-- CK alista -->
+            <td class="text-center">
+                <input type="checkbox" t-att-checked="'true' if line.custom_field2 else None" name="ck_alista"/>
+            </td>
+            <!-- CK carga -->
+            <td class="text-center">
+                <input type="checkbox" t-att-checked="'true' if line.custom_field3 else None" name="ck_carga"/>
+            </td>
+            <!-- Bultos No Cargados -->
+            <td class="text-center">
+                <span t-field="line.bultos_no_cargados"/> <!-- Replace with the correct field name -->
+            </td>
+        </tr>
+    </t>
+</xpath>
+    </template>
+
+<template id="sale_order_inherit_report" inherit_id="sale.report_saleorder_document">
+    <!-- Insert signature fields with labels and lines after the total -->
+    <xpath expr="//div[@id='total']" position="after">
+      <table class="table table-borderless">
+        <tbody><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <tr style="border: 0px solid black; ">
+            <td class="text-center">
+              <div style="border-bottom: 1px solid black; width: 70%; margin: auto; padding-top: 2em;"></div>
+              <span t-field="doc.enlisted_signature" t-if="doc.enlisted_signature"/>
+              <div style="text-align: center;"><strong>Enlisted Signature</strong></div>
+            </td>
+            <td class="text-center">
+              <div style="border-bottom: 1px solid black; width: 70%; margin: auto; padding-top: 2em;"></div>
+              <span t-field="doc.delivery_signature" t-if="doc.delivery_signature"/>
+              <div style="text-align: center;"><strong>Delivery Signature</strong></div>
+            </td>
+            <td class="text-center">
+              <div style="border-bottom: 1px solid black; width: 70%; margin: auto; padding-top: 2em;"></div>
+              <span t-field="doc.received_signature" t-if="doc.received_signature"/>
+              <div style="text-align: center;"><strong>Received Signature</strong></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </xpath>
+  </template>
+</odoo>
