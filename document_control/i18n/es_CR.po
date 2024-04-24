@@ -1,0 +1,543 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e-20240331\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-02 05:01+0000\n"
+"PO-Revision-Date: 2024-04-02 05:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: document_control
+#: model:ir.actions.report,print_report_name:document_control.action_document_for_collection_report
+msgid "('Doc Cobros - %s' % (object.name))"
+msgstr ""
+
+#. module: document_control
+#: model:ir.actions.report,print_report_name:document_control.action_document_control_liquidation
+msgid "('Liquidación - %s' % (object.name))"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid ""
+"<br/>\n"
+"                                <span style=\"font-size: 12px; font-weight: bold;\">#: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid ""
+"<br/>\n"
+"                                <span style=\"font-size: 12px; font-weight: bold;\">Agente: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid ""
+"<br/>\n"
+"                                <span style=\"font-size: 12px; font-weight: bold;\">Bodega: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid ""
+"<br/>\n"
+"                                <span style=\"font-size: 12px; font-weight: bold;\">Encargado: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid ""
+"<br/>\n"
+"                                <span style=\"font-size: 12px; font-weight: bold;\">Fecha: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "<span style=\"font-size: 12px; font-weight: bold;\">Compañia: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "<span style=\"font-size: 12px; font-weight: bold;\">Número: </span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "<span style=\"font-size: 12px;\">DIFERENCIA</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "<span style=\"font-size: 12px;\">TOTAL CHEQUE</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "<span style=\"font-size: 12px;\">TOTAL EFECTIVO</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "<span style=\"font-size: 12px;\">TOTAL SALDO DOCUMENTOS</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "<span style=\"font-size: 12px;\">TOTAL TRANSFERENCIAS</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "<span style=\"font-size: 12px;\">TOTAL</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "<span style=\"font-size: 15px; font-weight: bold;\">Total</span>"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "<span style=\"font-size: 15px;\">Facturas </span>"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__agent_id
+msgid "Agent"
+msgstr "Agente"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Autorizado por:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment__payment_type_doc_control__cash
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment_register__payment_type_doc_control__cash
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment__payment_type_doc_control__check
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment_register__payment_type_doc_control__check
+msgid "Check"
+msgstr "Cheque"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Cheque:"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Cliente:"
+msgstr ""
+
+#. module: document_control
+#: model:res.groups,name:document_control.group_module_document_control_coll
+msgid "Collections"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__company_id
+msgid "Company"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__name
+msgid "Control Number"
+msgstr "Número de Control"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "Cuentas por cobrar:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__date_document_control
+msgid "Date Document Control"
+msgstr "Fecha de Control de Documentos"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_filter_new
+msgid "Delivery"
+msgstr "Entrega"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Details"
+msgstr "Detalles"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__diference
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Diference"
+msgstr "Diferencia"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: document_control
+#: model:ir.actions.act_window,name:document_control.document_control_action_window
+#: model:ir.ui.menu,name:document_control.document_control
+msgid "Document Control"
+msgstr "Control de Documento"
+
+#. module: document_control
+#: model:ir.module.category,name:document_control.module_document_control
+msgid "Document Control Groups"
+msgstr "Grupo Control de Documentos"
+
+#. module: document_control
+#: model:ir.actions.report,name:document_control.action_document_for_collection_report
+msgid "Document for Collection"
+msgstr "Documento para Cobros"
+
+#. module: document_control
+#: model:ir.actions.report,name:document_control.action_document_control_liquidation
+msgid "Document for Liquidation"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Documents"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__state__done
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_filter_new
+msgid "Done"
+msgstr "Hecho"
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__state__draft
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_filter_new
+msgid "Draft"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Efectivo:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_bank_statement_line__partner_email
+#: model:ir.model.fields,field_description:document_control.field_account_move__partner_email
+#: model:ir.model.fields,field_description:document_control.field_account_payment__partner_email
+msgid "Email"
+msgstr "Correo"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Entrega de documentos para cobro"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Factura:"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Hecho por:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__id
+msgid "ID"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__state__delivery
+msgid "In Delivery"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__document_ids
+msgid "Invoices"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "Liquidación"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__document_control__state__liquidation
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_filter_new
+msgid "Liquidation"
+msgstr ""
+
+#. module: document_control
+#: model:res.groups,name:document_control.group_module_document_control_log
+msgid "Logistics"
+msgstr "Logística"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_bank_statement_line__partner_mobile
+#: model:ir.model.fields,field_description:document_control.field_account_move__partner_mobile
+#: model:ir.model.fields,field_description:document_control.field_account_payment__partner_mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: document_control
+#. odoo-python
+#: code:addons/document_control/models/models.py:0
+#: code:addons/document_control/models/models.py:0
+#: code:addons/document_control/models/models.py:0
+#: code:addons/document_control/models/models.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment__payment_type_doc_control__none
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment_register__payment_type_doc_control__none
+msgid "None"
+msgstr "Ninguno"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_payment__payment_type_doc_control
+#: model:ir.model.fields,field_description:document_control.field_account_payment_register__payment_type_doc_control
+msgid "Payment Type Doc Control"
+msgstr "Tipo de Pago (control de doc.)"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_bank_statement_line__partner_phone
+#: model:ir.model.fields,field_description:document_control.field_account_move__partner_phone
+#: model:ir.model.fields,field_description:document_control.field_account_payment__partner_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Print Document Control"
+msgstr "Imprimir Documento"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Print Document Control liquidation"
+msgstr "Imprimir Documento para Liquidación"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_payment__receipt_number
+#: model:ir.model.fields,field_description:document_control.field_account_payment_register__receipt_number
+msgid "Receipt Number"
+msgstr "Número de Recibo"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Recibido por:"
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "Recibo:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__responsible_id
+msgid "Responsible"
+msgstr "Encargado"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Saldo:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_bank_statement_line__partner_user_name
+#: model:ir.model.fields,field_description:document_control.field_account_move__partner_user_name
+#: model:ir.model.fields,field_description:document_control.field_account_payment__partner_user_name
+msgid "Sales Person"
+msgstr "Vendedor"
+
+#. module: document_control
+#: model:ir.module.category,description:document_control.module_document_control
+msgid "Set up Document Control"
+msgstr "Configurar Control de Documentos"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__state
+msgid "State"
+msgstr "Estado"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_filter_new
+msgid "States"
+msgstr "Estados"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_bank_statement_line__partner_vat
+#: model:ir.model.fields,field_description:document_control.field_account_move__partner_vat
+#: model:ir.model.fields,field_description:document_control.field_account_payment__partner_vat
+msgid "Tax ID"
+msgstr "Impuesto"
+
+#. module: document_control
+#: model:ir.model.fields,help:document_control.field_account_bank_statement_line__partner_vat
+#: model:ir.model.fields,help:document_control.field_account_move__partner_vat
+#: model:ir.model.fields,help:document_control.field_account_payment__partner_vat
+msgid ""
+"The Tax Identification Number. Values here will be validated based on the "
+"country format. You can use '/' to indicate that the partner is not subject "
+"to tax."
+msgstr ""
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "To Delyvery"
+msgstr "Entregar"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "To Done"
+msgstr "Hecho"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "To Liquidation"
+msgstr "Liquidación"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__total
+msgid "Total"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__total_cash
+msgid "Total Cash"
+msgstr "Total Efectivo"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__total_check
+msgid "Total Check"
+msgstr "Total Cheque"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__total_due
+msgid "Total Due"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__total_transfer
+msgid "Total Transfer"
+msgstr "Total Transferencia"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Total amount"
+msgstr "Monto Total"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_form
+msgid "Total balance"
+msgstr "Saldo Total"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+msgid "Total:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment__payment_type_doc_control__transfer
+#: model:ir.model.fields.selection,name:document_control.selection__account_payment_register__payment_type_doc_control__transfer
+msgid "Transfer"
+msgstr "Transferencia"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_control_liquidation
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Transferencia:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__truck_plate
+msgid "Truck Plate"
+msgstr "Placa"
+
+#. module: document_control
+#: model_terms:ir.ui.view,arch_db:document_control.document_for_collection
+msgid "Vence:"
+msgstr ""
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_document_control__warehouse_id
+msgid "Warehouse"
+msgstr "Bodega"
+
+#. module: document_control
+#. odoo-python
+#: code:addons/document_control/models/models.py:0
+#, python-format
+msgid ""
+"You cannot go to done because the difference between the amounts and "
+"payments is not equal to '0'"
+msgstr ""
+"No puedes pasar a hecho porque la diferencia entre los importes y "
+"los pagos no es igual a '0'"
+
+#. module: document_control
+#: model:ir.model.fields,field_description:document_control.field_account_bank_statement_line__partner_zones
+#: model:ir.model.fields,field_description:document_control.field_account_move__partner_zones
+#: model:ir.model.fields,field_description:document_control.field_account_payment__partner_zones
+msgid "Zone"
+msgstr "Zona"
+
+#. module: document_control
+#: model:ir.model,name:document_control.model_document_control
+msgid "document.control"
+msgstr ""

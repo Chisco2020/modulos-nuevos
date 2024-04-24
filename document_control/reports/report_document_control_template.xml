@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="document_for_collection">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-set="cont" t-value="0" />
+                        <t t-set="total" t-value="0" />
+                        <h2 class="text-start">Entrega de documentos para cobro</h2>
+                        <div class="row pb-5">
+                            <div class="col-6">
+                                <span style="font-size: 12px; font-weight: bold;">Compañia: </span>
+                                <span style="font-size: 12px;" t-field="o.company_id.name" />
+                                <br />
+                                <span style="font-size: 12px; font-weight: bold;">Bodega: </span>
+                                <span style="font-size: 12px;" t-field="o.warehouse_id.name" />
+                                <br />
+                                <span style="font-size: 12px; font-weight: bold;">Fecha: </span>
+                                <span style="font-size: 12px;" t-field="o.date_document_control" />
+                            </div>
+                            <div class="col-6">
+                                <span style="font-size: 12px; font-weight: bold;">Número: </span>
+                                <span style="font-size: 12px;" t-field="o.name" />
+                                <br />
+                                <span style="font-size: 12px; font-weight: bold;">Agente: </span>
+                                <span style="font-size: 12px;" t-field="o.agent_id.name" />
+                                <br />
+                                <span style="font-size: 12px; font-weight: bold;">Encargado: </span>
+                                <span style="font-size: 12px;" t-field="o.responsible_id.name" />
+                                <br />
+                                <span style="font-size: 12px; font-weight: bold;">#: </span>
+                                <span style="font-size: 12px;" t-field="o.truck_plate" />
+                            </div>
+                        </div>
+                        <br />
+                        <table class="table-borderless" style="width: 100%">
+                            <thead style="border-bottom: 1px solid #000000;">
+                                <tr>
+                                    <th style="font-size: 12px; font-weight: bold; width:30mm"
+                                        class="text-center"> Factura: </th>
+                                    <th style="font-size: 12px; font-weight: bold;"
+                                        class="text-start"> Cliente: </th>
+                                    <th style="font-size: 12px; font-weight: bold; width:20mm"
+                                        class="text-center"> Vence: </th>
+                                    <th style="font-size: 12px; font-weight: bold;" class="text-end">
+                                        Saldo: </th>
+                                    <th style="font-size: 12px; font-weight: bold;"
+                                        class="text-center"> Efectivo: </th>
+                                    <th style="font-size: 12px; font-weight: bold;"
+                                        class="text-center"> Cheque: </th>
+                                    <th style="font-size: 12px; font-weight: bold;"
+                                        class="text-center"> Transferencia: </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.document_ids" t-as="l" class="border-bottom"
+                                    style="height:10mm">
+                                    <td class="text-center">
+                                        <span style="font-size: 12px;" t-field="l.name" />
+                                    </td>
+                                    <td class="text-start">
+                                        <span style="font-size: 12px;" t-field="l.partner_id.name" />
+                                    </td>
+                                    <td class="text-center">
+                                        <span style="font-size: 12px;" t-field="l.invoice_date_due" />
+                                    </td>
+                                    <td class="text-end">
+                                        <span style="font-size: 12px;"
+                                            t-field="l.amount_residual_signed" />
+                                    </td>
+                                    <td class="text-center"> </td>
+                                    <td class="text-center"> </td>
+                                    <td class="text-center"> </td>
+                                    <t t-set="total" t-value="total+l.amount_total_signed" />
+                                    <t t-set="cont" t-value="cont+1" />
+                                </tr>
+                                <td colspan="2">
+                                    <span style="font-size: 15px;">Facturas </span>
+                                    <span style="font-size: 15px;" t-esc="cont" />
+                                </td>
+
+                                <td class="text-center">
+                                    <span style="font-size: 15px; font-weight: bold;">Total</span>
+                                </td>
+                                <td class="text-end">
+                                    <span style="font-size: 12px;">
+                                        <t t-esc="'{0:,.2f}'.format(int(total))" />
+                                    </span>
+                                </td>
+                                <td class="text-center"> </td>
+                                <td class="text-center"> </td>
+                                <td class="text-center"> </td>
+                            </tbody>
+                        </table>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <div
+                                    style="border-top:1px solid #000000; width: 200px; margin:auto;  padding-top: 25px;"
+                                    class="text-center">Hecho por:</div>
+                            </div>
+                            <div class="col-4">
+                                <div
+                                    style="border-top:1px solid #000000; width: 200px; margin:auto; padding-top: 25px;"
+                                    class="text-center">Autorizado por:</div>
+                            </div>
+                            <div class="col-4">
+                                <div
+                                    style="border-top:1px solid #000000; width: 200px; margin:auto;  padding-top: 25px;"
+                                    class="text-center">Recibido por:</div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="document_control_liquidation">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-set="cont" t-value="0" />
+                        <t t-set="total" t-value="0" />
+                        <t t-set="total_doc" t-value="0" />
+                        <t t-set="total_cash" t-value="0" />
+                        <t t-set="total_bank" t-value="0" />
+                        <t t-set="total_check" t-value="0" />
+                        <h2>Liquidación</h2>
+                        <table class="table-borderless" style="width: 100%;padding-buttom: 2px;">
+                            <thead style="border-bottom: 1px solid #000000;">
+                                <tr>
+                                    <th style="font-size: 12px; font-weight: bold; width:30mm"
+                                        class="text-center"> Cuentas por cobrar: </th>
+                                    <th style="font-size: 12px; font-weight: bold;"
+                                        class="text-center"> Recibo: </th>
+                                    <th style="font-size: 12px; font-weight: bold; width:20mm"
+                                        class="text-end"> Cheque: </th>
+                                    <th style="font-size: 12px; font-weight: bold;" class="text-end">
+                                        Efectivo: </th>
+                                    <th style="font-size: 12px; font-weight: bold;" class="text-end">
+                                        Transferencia: </th>
+                                    <th style="font-size: 12px; font-weight: bold;" class="text-end">
+                                        Total: </th>
+                                </tr>
+                                <br />
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.document_ids" t-as="l" class="border-bottom"
+                                    style="height:10mm">
+                                    <t t-set="items" t-value="l.get_data_payment_qweb()" />
+                                    <t t-set="total_line" t-value="0" />
+                                    <t t-set="total_doc" t-value="total_doc+l.amount_total_signed" />
+                                    <td class="text-center">
+                                        <span style="font-size: 12px;" t-field="l.name" />
+                                    </td>
+                                    <td class="text-center">
+                                        <t t-foreach="items" t-as="i">
+                                            <t t-set="v" t-value="i" />
+                                            <t t-if="v == 'receipt_number'">
+                                                <span style="font-size: 12px;"
+                                                    t-esc="i_value or 'REB00000000'" />
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-foreach="items" t-as="i">
+                                            <t t-set="v" t-value="i" />
+                                            <t t-if="v == 'total_check'">
+                                                <span style="font-size: 12px;" t-esc="i_value"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                                <t t-set="total_line" t-value="total_line+i_value" />
+                                                <t t-set="total_check" t-value="total_check+i_value" />
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-foreach="items" t-as="i">
+                                            <t t-set="v" t-value="i" />
+                                            <t t-if="v == 'total_cash'">
+                                                <span style="font-size: 12px;" t-esc="i_value"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                                <t t-set="total_line" t-value="total_line+i_value" />
+                                                <t t-set="total_cash" t-value="total_cash+i_value" />
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-foreach="items" t-as="i">
+                                            <t t-set="v" t-value="i" />
+                                            <t t-if="v == 'total_bank'">
+                                                <span style="font-size: 12px;" t-esc="i_value"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                                <t t-set="total_line" t-value="total_line+i_value" />
+                                                <t t-set="total_bank" t-value="total_bank+i_value" />
+                                            </t>
+                                        </t>
+                                    </td>
+                                    <td class="text-end">
+                                        <span style="font-size: 12px;" t-esc="total_line"
+                                            t-options='{"widget": "float", "precision": 2}' />
+                                    </td>
+                                    <t t-set="total" t-value="total+total_line" />
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br />
+                        <div class="row justify-content-between">
+                            <div class="col-6">
+                                <!-- <table style="width: 80%; margin:auto;  padding-top: 25px;"
+                                class="text-center">
+                                    <tbody>
+                                        <tr class="border-bottom" style="height:10mm">
+                                            <td class="text-center" colspan="2">
+                                                <span style="font-size: 12px;">Recibo</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" style="height:10mm">
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">(+) TOTAL EFECTIVO</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">00</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" style="height:10mm">
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">(+) TOTAL CHEQUE</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">00</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" style="height:10mm">
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">(+) TOTAL DEPOSITOS</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">00</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" style="height:10mm">
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">(-) GASTOS</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">00</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" style="height:10mm">
+                                            <td class="text-center">
+                                                <span style="font-size: 12px;">comentario: Transferencia bancaria</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table> -->
+                            </div>
+                            <div class="col-6">
+                                <table class="table-borderless"
+                                    style="width: 80%; margin-left:auto;">
+                                    <tbody>
+                                        <tr style="height:10mm">
+                                            <td class="text-start">
+                                                <span style="font-size: 12px;">TOTAL EFECTIVO</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span style="font-size: 12px;" t-esc="total_cash"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                            </td>
+                                        </tr>
+                                        <tr style="height:10mm">
+                                            <td class="text-start">
+                                                <span style="font-size: 12px;">TOTAL CHEQUE</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span style="font-size: 12px;" t-esc="total_check"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                            </td>
+                                        </tr>
+                                        <tr style="height:10mm">
+                                            <td class="text-start">
+                                                <span style="font-size: 12px;">TOTAL TRANSFERENCIAS</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span style="font-size: 12px;" t-esc="total_bank"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                            </td>
+                                        </tr>
+                                        <tr style="height:10mm">
+                                            <td class="text-start">
+                                                <span style="font-size: 12px;">TOTAL</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span style="font-size: 12px;" t-esc="total_doc"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                            </td>
+                                        </tr>
+                                        <tr style="height:10mm">
+                                            <td class="text-start">
+                                                <span style="font-size: 12px;">TOTAL SALDO
+                                                    DOCUMENTOS</span>
+                                            </td>
+                                            <td class="text-end"> - <span style="font-size: 12px;"
+                                                    t-esc="total"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                            </td>
+                                        </tr>
+                                        <tr class="border-top" style="height:10mm">
+                                            <td class="text-start">
+                                                <span style="font-size: 12px;">DIFERENCIA</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <t t-set="diference" t-value="total_doc - total" />
+                                                <span style="font-size: 12px;" t-esc="diference"
+                                                    t-options='{"widget": "float", "precision": 2}' />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

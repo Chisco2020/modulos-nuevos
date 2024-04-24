@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_document_control_user,document_control.document.control,model_document_control,base.group_user,1,1,1,0
+access_document_control_logistic,document_control.document.control,model_document_control,document_control.group_module_document_control_log,1,1,1,1
+access_document_control_collectio,document_control.document.control,model_document_control,document_control.group_module_document_control_coll,1,1,1,0
