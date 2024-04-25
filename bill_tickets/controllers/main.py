@@ -19,6 +19,5 @@ class BarcodeController(http.Controller):
                 os.remove('/tmp/barcode.png')
             except OSError:
                 pass
-            return request.make_response(encoded_string,
-                                         [('Content-Type', 'image/png')])
+            return request.make_response(encoded_string, [('Content-Type', 'image/png')])
         return request.not_found()
